@@ -274,8 +274,8 @@ EMSCRIPTEN_BINDINGS(Toolkit) {
 		.template constructor<>()
 		.function("resize", resizeMono)
 		.function("size", sizeMono)
-		.function("get", &internal::VectorAccess<MonoBufferVecType>::get)
-		.function("set", &internal::VectorAccess<MonoBufferVecType>::set)
+		.function("get", &emscripten::internal::VectorAccess<MonoBufferVecType>::get)
+		.function("set", &emscripten::internal::VectorAccess<MonoBufferVecType>::set)
 		;
 
   /**
@@ -288,8 +288,8 @@ EMSCRIPTEN_BINDINGS(Toolkit) {
 		.template constructor<>()
 		.function("resize", resizeStereo)
 		.function("size", sizeStereo)
-		.function("get", &internal::VectorAccess<StereoBufferVecType>::get)
-		.function("set", &internal::VectorAccess<StereoBufferVecType>::set)
+		.function("get", &emscripten::internal::VectorAccess<StereoBufferVecType>::get)
+		.function("set", &emscripten::internal::VectorAccess<StereoBufferVecType>::set)
 		;
 
 	/**
@@ -368,11 +368,11 @@ EMSCRIPTEN_BINDINGS(Toolkit) {
   /**
    * Frequency smearing
    */
-  class_<HAHLSimulation::CFrequencySmearing>("CFrequencySmearing")
-  	.function("SetDownwardSmearingBufferSize", &HAHLSimulation::CFrequencySmearing::SetDownwardSmearingBufferSize)
-		.function("SetUpwardSmearingBufferSize", &HAHLSimulation::CFrequencySmearing::SetUpwardSmearingBufferSize)
-		.function("SetDownwardSmearing_Hz", &HAHLSimulation::CFrequencySmearing::SetDownwardSmearing_Hz)
-		.function("SetUpwardSmearing_Hz", &HAHLSimulation::CFrequencySmearing::SetUpwardSmearing_Hz)
+  class_<HAHLSimulation::CGraf3DTIFrequencySmearing>("CGraf3DTIFrequencySmearing")
+  	.function("SetDownwardSmearingBufferSize", &HAHLSimulation::CGraf3DTIFrequencySmearing::SetDownwardSmearingBufferSize)
+		.function("SetUpwardSmearingBufferSize", &HAHLSimulation::CGraf3DTIFrequencySmearing::SetUpwardSmearingBufferSize)
+		.function("SetDownwardSmearing_Hz", &HAHLSimulation::CGraf3DTIFrequencySmearing::SetDownwardSmearing_Hz)
+		.function("SetUpwardSmearing_Hz", &HAHLSimulation::CGraf3DTIFrequencySmearing::SetUpwardSmearing_Hz)
   	;
 
   /**
@@ -427,7 +427,7 @@ EMSCRIPTEN_BINDINGS(Toolkit) {
    */
  	class_<HAHLSimulation::CMultibandExpander>("CMultibandExpander")
  		.function("GetBandExpander", &HAHLSimulation::CMultibandExpander::GetBandExpander, allow_raw_pointers())
- 		.function("GetAttenuationForBand", &HAHLSimulation::CMultibandExpander::GetAttenuationForBand)
+ 		.function("GetAttenuationForBand", &HAHLSimulation::CHearingLossSim::GetAttenuationForBand)
  		;
 
   /**

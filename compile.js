@@ -36,6 +36,7 @@ let args = [
   '--bind',
   '-I', './3dti_AudioToolkit/3dti_Toolkit',
   '-I', './3dti_AudioToolkit/3dti_ResourceManager/third_party_libraries/cereal/include',
+  '-I', './3dti_AudioToolkit/3dti_ResourceManager/third_party_libraries/eigen',
   '-o', `./build/${outputFilename}`,
   '-D', '_3DTI_AXIS_CONVENTION_WEBAUDIOAPI',
   '--memory-init-file', '0',
